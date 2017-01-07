@@ -1,0 +1,20 @@
+<div class="fullWidth row-padding">
+	<div class="row align-center">
+      <div class="columns text-center">
+        <h1 class="display-inline">LANDING SECTION</h1>
+      </div>
+    </div>
+    <div class="row">
+    	<div class="column large-6 medium-6 small-12" ng-repeat="landing in main.heroSection.slides track by $index" ng-class="{'unsaved' : landing.imgUnSaved }">
+
+            <fileupload-directive data="landing" url="{{main.url.fs}}" path="{{main.fsDir}}"></fileupload-directive>
+            
+    		<textarea data-autoresize placeholder="Message:" rows="4" ng-model="landing.text"></textarea>
+            <a class="button small" ng-click="main.save(landing)">Save</a>
+            <a class="button small" ng-click="main.remove(landing)">Delete</a>
+    	</div>
+        <div class="column large-6 medium-6 small-12 text-center add-new ">
+            <a class="button large align-middle" ng-click="main.addNew()">Add New</a>
+        </div>
+    </div>
+</div>

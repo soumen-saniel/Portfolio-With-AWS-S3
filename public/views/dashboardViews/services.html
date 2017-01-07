@@ -1,0 +1,23 @@
+<div class="fullWidth row-padding">
+	<div class="row align-center">
+      <div class="columns text-center">
+        <h1 class="display-inline">SERVICES SECTION</h1>
+      </div>
+    </div>
+    <div class="row">
+    	<div class="column large-3 medium-4 small-12" ng-repeat="(key, service) in main.services" ng-class="{'unsaved' : service.imgUnSaved }">
+
+            <fileupload-directive data="service" url="{{main.url.fs}}" path="{{main.fsDir}}"></fileupload-directive>
+            <br/>
+            <form name="form{{key}}">
+    			<input type="text" placeholder="*Title:" ng-model="service.title" required/>
+    			<input type="text" placeholder="Link:" ng-model="service.link"/>
+	            <button class="button small" ng-disabled="form{{key}}.$invalid" ng-click="main.save(service)">Save</button>
+	            <a class="button small" ng-click="main.remove(service)">Delete</a>
+            </form>
+    	</div>
+        <div class="column large-6 medium-6 small-12 text-center add-new ">
+            <a class="button large align-middle" ng-click="main.addNew()">Add New</a>
+        </div>
+    </div>
+</div>

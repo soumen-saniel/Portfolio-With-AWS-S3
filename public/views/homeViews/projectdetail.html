@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="column small-12 medium-12" ng-class="{'large-6' : !learnMore, 'large-12' : learnMore}">
+    <img ng-src="{{project.image}}"/>
+  </div>
+  <div class="column small-12 medium-12" ng-class="{'large-6' : !learnMore, 'large-12' : learnMore}">
+    <br/>
+    <h4 class="font-dark">{{project.name}}</h4>
+    <p>{{project.overview}}</p>
+    <p ng-if="project.client">Client : {{project.client}}</p>
+    <p>Contribution : {{project.role}}</p>
+    <span class="label" ng-repeat="technology in project.technology track by $index">{{technology}}</span>
+    <br/><br/>
+    <a ng-click="toggle()" class="button small"><span ng-hide="learnMore">Learn more</span><span ng-show="learnMore">Collapse</span></a>
+    <a ng-if="project.url" href="{{project.url}}" class="button small">View live</a>
+  </div>
+</div>
+<div ng-show="learnMore">
+  <div class="row hide-for-small-only row-padding" ng-repeat="sub in projectSub">
+    <div class="column small-12 medium-6 large-6" ng-class-odd="'hide'">
+      <br/>
+      <p>{{sub.description}}</p>
+    </div>
+    <div class="column small-12 medium-6 large-6">
+      <img ng-src="{{sub.image}}"/>
+    </div>
+    <div class="column small-12 medium-6 large-6" ng-class-even="'hide'">
+      <br/>
+      <p>{{sub.description}}</p>
+    </div>
+  </div>
+  <div class="row show-for-small-only row-padding" ng-repeat="sub in projectSub">
+    <div class="column small-12 medium-12 large-6">
+      <img ng-src="{{sub.image}}"/>
+    </div>
+    <div class="column small-12 medium-12 large-6">
+      <br/>
+      <p>{{sub.description}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column text-center">
+      <a ng-click="toggle()" class="button small">Collapse</a>
+    </div>
+  </div>
+</div>

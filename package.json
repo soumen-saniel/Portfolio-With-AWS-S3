@@ -1,0 +1,32 @@
+{
+  "name": "soumen-saniel-portfolio",
+  "version": "1.0.0",
+  "description": "Soumen's Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soumen-saniel/My-Portfolio.git"
+  },
+  "author": "Soumen Samiel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soumen-saniel/My-Portfolio/issues"
+  },
+  "homepage": "https://github.com/soumen-saniel/My-Portfolio#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "fs-extra": "^1.0.0",
+    "lodash": "^4.16.4",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.6.5",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.0",
+    "multer-autoreap": "^0.1.2",
+    "sendgrid": "^1.9.2"
+  }
+}

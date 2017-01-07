@@ -1,0 +1,201 @@
+<div class="fullWidth row-padding">
+<!-- CV Template -->
+<page class="cvwrapper" size="A4">
+	<!-- Header -->
+	<div class="row fullWidth header">
+		<div class="headerName text-center"><h5>WEB DEVELOPER</h5></div>
+		<div class="hearedArrow"></div>
+	</div>
+	<br/>
+	<!-- Intro -->
+	<div class="row intro">
+		<div class="column small-3 medium-3 large-3 text-center cvPhoto">
+			<img src="/img/cv/me.jpg"/>
+		</div>
+		<div class="column small-9 medium-9 large-9">
+			<h3><span class="font-dark">SOUMEN </span><span class="font-light">SANIEL</span></h3>
+			<p class="font-dark">Full stack web developer specializing in frontend development. Experienced in all phases of development cycle from planning, development, testing and deployment to support. Fluent in JavaScript based development environment both frontend and backend. Proficient in solving client requirements and catering user experience with the latest technology trends.</p>
+		</div>
+	</div>
+	<br/>
+	<!-- Contact -->
+	<div class="row fullWidth contact">
+		<div class="column small-3 medium-3 large-3 text-center">
+			<a><i class="fi-telephone large"></i></a>
+			<p>+91 9002579440</p>
+		</div>
+		<div class="column small-3 medium-3 large-3 text-center">
+			<a><i class="fi-mail large"></i></a>
+			<p>soumen.saniel@gmail.com</p>
+		</div>
+		<div class="column small-3 medium-3 large-3 text-center">
+			<a><i class="fi-web large"></i></a>
+			<p>www.sanielsoumen.in</p>
+		</div>
+		<div class="column small-3 medium-3 large-3 text-center">
+			<a><i class="fi-marker large"></i></a>
+			<p>Bangalore, Karnataka, India.</p>
+		</div>
+	</div>
+	<br/>
+	<div class="row">
+		<!-- Work experience -->
+		<div class="column small-8 medium-8 large-8">
+			<h5 class="display-inline font-dark"><i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;</h5>
+			<h6 class="display-inline font-light"><b>WORK EXPERIENCE</b></h6>
+			<div class="row work">
+				<div class="column small-4 medium-4 large-4 text-right">
+					<p class="font-dark"><b>WEB APPLICATION DEVELOPER</b></p>
+					<p class="font-dark">July 2015 - Present</p>
+				</div>
+				<div class="column small-8 medium-8 large-8 column-bulleted">
+					<p class="font-dark"><b>ITC Infotech - Bangalore</b></p>
+					<p class="font-dark">Google map based interactive trip planner for airlines</p>
+					<p class="font-dark">Requirement gathering, Prototyping, UI design, Responsive web development, Angular development, Google Map API integration, Backend integration and Testing.</p>
+					<p class="font-dark">Development of Google map based store locator for ITC websites.</p>
+					<p class="font-dark">Worked on payroll management system of ITC Ltd factories. ASP MVP development, Data migration to ORACLE data base</p>
+					<p class="font-dark">Development of dashboards for banking applications.</p>
+					<div class="bulletTop"></div>
+					<div class="bulletBottom"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Skills -->
+		<div class="column small-4 medium-4 large-4 skills">
+			<h5 class="display-inline font-dark"><i class="fa fa-terminal" aria-hidden="true"></i>&nbsp;</h5>
+			<h6 class="display-inline font-light"><b>TECHNICAL SKILLS</b></h6>
+			<div class="row" ng-repeat="(key, skills) in main.skills | orderBy:'category' | groupBy:'category'">
+				<div class="column small-12 medium-12 large-12"><p class="font-light"><b>{{key}}</b></p></div>
+				<div class="column small-12 medium-12 large-12" ng-repeat="skill in skills | orderBy:'name'">
+					<div class="row">
+						<div class="column small-6 medium-6 large-6">
+							<p class="font-dark"><b>{{skill.name}}</b></p>
+						</div>
+						<div class="column small-6 medium-6 large-6">
+							<div class="slider" data-slider data-initial-start="{{skill.percentage}}">
+								<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+								<span class="slider-fill" data-slider-fill></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<br/>
+	<div class="row education">
+		<div class="column small-12 medium-12 large-12">
+			<h5 class="display-inline font-dark"><i class="fa fa-graduation-cap" aria-hidden="true"></i></h5>
+			<h6 class="display-inline font-light"><b>EDUCATION</b></h6>
+		</div>
+		<div class="column small-6 medium-6 large-6 text-center">
+			<p class="polygon display-inline"><b>2008 - 2010</b></p>
+			<p class="font-dark"><b>HIGH SCHOOL</b></p>
+			<p class="font-dark">From St'Xavier's School Purulia, West Bengal under ICSE board.</p>
+			<hr/>
+			<div class="bulletLeft"></div>
+			<div class="bulletRight"></div>
+		</div>
+		<div class="column small-6 medium-6 large-6 text-center">
+			<p class="polygon display-inline"><b>2011 - 2015</b></p>
+			<p class="font-dark"><b>GRADUATION</b></p>
+			<p class="font-dark">B.Tech. in Electronics and Communication Engineering.</p>
+			<p class="font-dark">From Heritage Institute of Technology Kolkata under WBUT.</p>
+			<hr/>
+			<div class="bulletLeft"></div>
+			<div class="bulletRight"></div>
+		</div>
+	</div>
+	<br/>
+	<div class="row">
+		<!-- Hobbies and interests -->
+		<div class="column small-8 medium-8 large-8">
+			<h5 class="display-inline font-dark"><i class="fi-lightbulb"></i>&nbsp;</h5>
+			<h6 class="display-inline font-light"><b>HOBBIES & INTERESTS</b></h6>
+			<div class="row work">
+				<div class="column small-4 medium-4 large-4 text-right">
+					<p class="font-dark"><b>INTERESTS</b></p>
+				</div>
+				<div class="column small-8 medium-8 large-8 column-bulleted">
+					<p class="font-dark">Learning and implementing latest web technologies in pet projects.</p>
+					<p class="font-dark">Learning about Internet of things (IOT), its importance and possibilities of application.</p>
+					<p class="font-dark">I am an automobile enthusiast and love to peak in to the world of automobile designing when free.</p>
+					<div class="bulletTop"></div>
+				</div>
+				<div class="column small-4 medium-4 large-4 text-right">
+					<p class="font-dark"><b>HOBBIES</b></p>
+				</div>
+				<div class="column small-8 medium-8 large-8 column-bulleted">
+					<p class="font-dark">I love cooking new dishes in leisure time.</p>
+					<p class="font-dark">Playing guitar and listening to music.</p>
+					<div class="bulletTop"></div>
+					<div class="bulletBottom"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Skills -->
+		<div class="column small-4 medium-4 large-4 skills">
+			<h5 class="display-inline font-dark"><i class="fi-torso"></i>&nbsp;</h5>
+			<h6 class="display-inline font-light"><b>PERSONAL DETAILS</b></h6>
+			<div class="row">
+				<div class="column small-6 medium-6 large-6">
+					<p class="font-dark"><b>Date of Birth</b></p>
+				</div>
+				<div class="column small-6 medium-6 large-6">
+					<p class="font-light"><b>19th June 1992</b></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-6 medium-6 large-6">
+					<p class="font-dark"><b>Nationality</b></p>
+				</div>
+				<div class="column small-6 medium-6 large-6">
+					<p class="font-light"><b>Indian</b></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-12 medium-12 large-12">
+					<p class="font-dark"><b>Language proficiency</b></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-6 medium-6 large-6">
+					<p class="font-light"><b>English</b></p>
+				</div>
+				<div class="column small-6 medium-6 large-6">
+					<div class="slider" data-slider data-initial-start="100">
+						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+						<span class="slider-fill" data-slider-fill></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-6 medium-6 large-6">
+					<p class="font-light"><b>Bengali</b></p>
+				</div>
+				<div class="column small-6 medium-6 large-6">
+					<div class="slider" data-slider data-initial-start="80">
+						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+						<span class="slider-fill" data-slider-fill></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-6 medium-6 large-6">
+					<p class="font-light"><b>Hindi</b></p>
+				</div>
+				<div class="column small-6 medium-6 large-6">
+					<div class="slider" data-slider data-initial-start="80">
+						<span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+						<span class="slider-fill" data-slider-fill></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<img src="/img/cv/my-sig.JPG" class="signature"/>
+</page>
+
+
+</div>

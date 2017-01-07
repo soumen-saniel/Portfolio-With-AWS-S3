@@ -1,0 +1,55 @@
+<div class="fullWidth row-padding">
+	<div class="row align-center">
+      <div class="columns text-center">
+        <h1 class="display-inline">ABOUT SECTION</h1>
+      </div>
+    </div>
+    <div class="row">
+    	<div class="column large-4 medium-4 small-12">
+    		<fileupload-directive data="main.aboutData.aboutImage" url="{{main.url.fs}}" path="{{main.fsDir}}"></fileupload-directive>
+    		<h6 class="font-light">About section image</h6>
+    	</div>
+    	<div class="column large-4 medium-4 small-12">
+    		<fileupload-directive data="main.aboutData.interestImage" url="{{main.url.fs}}" path="{{main.fsDir}}"></fileupload-directive>
+    		<h6 class="font-light">Interests section image</h6>
+    	</div>
+    	<div class="column large-4 medium-4 small-12">
+    		<fileupload-directive data="main.aboutData.hobbyImage" url="{{main.url.fs}}" path="{{main.fsDir}}"></fileupload-directive>
+    		<h6 class="font-light">Hobbies section image</h6>
+    	</div>
+    	<div class="column large-12 medium-12 small-12">
+    		<br/>
+            <form name="aboutForm">
+            	<h5 class="font-light">* compulsory fields</h5>
+            	<label><h6 class="font-light">* Name : </h6><input class="form-control" placeholder="Your name :" type="text" name="name" ng-model="main.aboutData.name" required></label>
+            	<label><h6 class="font-light">* Date of birth : </h6><input class="form-control" placeholder="Birth day :" type="text" name="dob" ng-model="main.aboutData.dob" required></label>
+            	<label><h6 class="font-light">* Nationality : </h6><input class="form-control" placeholder="Nationality :" type="text" name="nationality" ng-model="main.aboutData.nationality" required></label>
+            	<label><h6 class="font-light">* Few lines about yourself</h6></label>
+            	<textarea class="form-control" name="description" data-autoresize placeholder="Few line about yourself :" rows="3" ng-model="main.aboutData.description" required></textarea>
+            	<label><h6 class="font-light">* Languages known</h6></label>
+            	<form name="languageForm">
+	            	<div ng-repeat="language in main.aboutData.languages track by $index">
+	            		<input class="form-control" placeholder="Language {{$index + 1}} :" type="text" name="language{{$index}}" ng-model="main.aboutData.languages[$index]" required>
+	            	</div>
+					<button class="button small" ng-disabled="languageForm.$invalid" ng-click="main.addNewLanguage()">Add language</button>
+				</form>
+				<label><h6 class="font-light">* Interests</h6></label>
+				<form name="interestsForm">
+	            	<div ng-repeat="interest in main.aboutData.interests  track by $index">
+	            		<input class="form-control" placeholder="Interest {{$index + 1}} :" type="text" name="interest{{$index}}" ng-model="main.aboutData.interests[$index]" required>
+	            	</div>
+					<button class="button small" ng-disabled="interestsForm.$invalid" ng-click="main.addNewInterest()">Add interest</button>
+				</form>
+				<label><h6 class="font-light">* Hobbies</h6></label>
+				<form name="hobbiesForm">
+	            	<div ng-repeat="hobby in main.aboutData.hobbies  track by $index">
+	            		<input class="form-control" placeholder="Hobby {{$index + 1}} :" type="text" name="hobby{{$index}}" ng-model="main.aboutData.hobbies[$index]" required>
+	            	</div>
+					<button class="button small" ng-disabled="hobbiesForm.$invalid" ng-click="main.addNewHobby()">Add hobby</button>
+				</form>
+				<hr/>
+	            <button class="button" ng-disabled="aboutForm.$invalid" ng-click="main.save(main.aboutData)">Save</button>
+            </form>
+    	</div>
+    </div>
+</div>

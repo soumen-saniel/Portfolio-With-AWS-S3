@@ -1,0 +1,28 @@
+<div class="fullWidth row-padding">
+	<div class="row align-center">
+      <div class="columns text-center">
+        <h1 class="display-inline">SKILLS SECTION</h1>
+      </div>
+    </div>
+    <form name="form{{$index}}" ng-repeat="skill in main.skills track by $index">
+	    <div class="row">
+	    	<div class="column small-12 medium-4 large-4">
+	    		<input class="form-control" placeholder="Category : " type="text" name="category{{$index}}" ng-model="skill.category" required/>
+	    	</div>
+	    	<div class="column small-12 medium-4 large-4">
+	    		<input class="form-control" placeholder="Technology : " type="text" name="name{{$index}}" ng-model="skill.name" required/>
+	    	</div>
+	    	<div class="column small-12 medium-2 large-2">
+	    		<input class="form-control" placeholder="Percentage : " type="number" name="percentage{{$index}}" ng-model="skill.percentage" required/>
+	    	</div>
+	    	<div class="column small-12 medium-2 large-2">
+	    		<button class="button small" ng-disabled="form{{$index}}.$invalid" ng-click="main.save(skill)">Save</button>
+	            <a class="button small" ng-click="main.remove(skill)">Delete</a>
+	    	</div>
+	    </div>
+    </form>
+    <div class="row align-center">
+    	<div class="column small-12 medium-12 large-12 text-center"></div>
+    	<a class="button large" ng-click="main.addNew()">Add new skill</a>
+    </div>
+</div>

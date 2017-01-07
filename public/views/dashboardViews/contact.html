@@ -1,0 +1,47 @@
+<div class="fullWidth row-padding">
+	<div class="row align-center">
+      <div class="columns text-center">
+        <h1 class="display-inline">CONTACT SECTION</h1>
+      </div>
+    </div>
+    <form name="contactForm">
+    	<div class="row">
+	    	<div class="column small-12 medium-12 large-12">
+	    		<label><h6 class="font-light display-inline">* Address</h6><textarea class="form-control" placeholder="Address : " rows="2" type="text" name="address" ng-model="main.contact.address" data-autoresize required></textarea></label>
+	    		<label><h6 class="font-light display-inline">* Contact number</h6><input class="form-control" type="text" name="phone" placeholder="Phone :" ng-model="main.contact.phone" required/></label>
+	    		<label><h6 class="font-light display-inline">* Email address</h6><input class="form-control" type="email" name="email" placeholder="Email :" ng-model="main.contact.email" required/></label>
+	    	</div>
+	    	<div class="columns align-middle text-center">
+	    		<button class="button large" ng-disabled="contactForm.$invalid" ng-click="main.saveContact(main.contact)">Save</button>
+	    	</div>
+    	</div>
+    </form>
+    <div class="row align-center">
+      <div class="columns text-center">
+      	<hr/>
+        <h4 class="display-inline">SOCIAL NETWORKING LINKS</h4>
+      </div>
+    </div>
+    <form name="form{{$index}}" ng-repeat="social in main.socialNetworks track by $index">
+    	<div class="row">
+    		<div class="column small-4 medium-2 large-2">
+    			<fileupload-directive data="social" url="{{main.url.fs}}" path="{{main.fsDir}}"></fileupload-directive>
+    		</div>
+    		<div class="column small-8 medium-7 large-7 align-middle">
+	    		<input class="form-control" placeholder="URL : " type="text" name="URL{{$index}}" ng-model="social.url" required/>
+    		</div>
+    		<div class="column small-12 medium-3 large-3 align-middle text-center">
+    			<a><button class="button small" ng-disabled="form{{$index}}.$invalid" ng-click="main.saveSocial(social)">Save</button></a>
+	            <a class="button small" ng-click="main.remove(social)">Delete</a>
+    		</div>
+    	</div>
+    </form>
+    <div class="row">
+    	<div class="column small-12 medium-12 large-12">
+    		<hr/>
+    	</div>
+    	<div class="column small-12 medium-12 large-12 align-middle text-center">
+    		<a class="button large" ng-click="main.addNew()">Add new</a>
+    	</div>
+    </div>
+</div>

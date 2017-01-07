@@ -1,0 +1,78 @@
+<div class="wrapper dashboard-wrapper fullWidth" data-magellan dashboard-directive>
+  <!-- Navigation -->
+  <div id="navigation" class="fullWidth navigation">
+    <div class="row show-for-small-only">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li>
+          <a><i class="fi-list-thumbnails"></i></a>
+          <ul class="menu">
+            <li><a ui-sref=".landing">Landing</a></li>
+            <li><a ui-sref=".services">Services</a></li>
+            <li><a ui-sref=".portfolio">Portfolio</a></li>
+            <li><a ui-sref=".about">About</a></li>
+            <li><a ui-sref=".skills">Skills</a></li>
+            <li><a ui-sref=".experience">Experience</a></li>
+            <li><a ui-sref=".contact">Contact</a></li>
+            <li><a ui-sref=".cv">CV</a></li>
+          </ul>
+        </li>
+        <li class="menu-text"><a href="" ui-sref="admin">DashBoard</a></li>
+      </ul>
+    </div>
+    <!--To be shown only in large screen-->
+    <div class="row hide-for-small-only">
+      <ul class="menu">
+        <li class="menu-text"><a href="" ui-sref="admin">DashBoard</a></li>
+        <li><span ui-sref=".landing">Landing</span></li>
+        <li><span ui-sref=".services">Services</span></li>
+        <li><span ui-sref=".portfolio">Portfolio</span></li>
+        <li><span ui-sref=".about">About</span></li>
+        <li><span ui-sref=".skills">Skills</span></li>
+        <li><span ui-sref=".experience">Experience</span></li>
+        <li><span ui-sref=".contact">Contact</span></li>
+        <li><span ui-sref=".cv">CV</span></li>
+      </ul>
+    </div>
+  </div>
+  <div ui-view>
+
+    <div class="fullWidth row-padding">
+      <div class="row align-center">
+        <div class="columns text-center">
+          <h1 class="display-inline">WELLCOME TO DASHBOARD</h1>
+        </div>
+      </div>
+      <form name="loginCredentialsForm">
+        <div class="row">
+          <div class="small-12 medium-12 large-12">
+            <label><h6 class="font-light">* Login User Name : </h6><input class="form-control" placeholder="Login user name :" type="text" name="loginusername" ng-model="main.credentials.loginusername" ng-required="!main.credentials.loginpassword"></label>
+          </div>
+          <div class="small-12 medium-12 large-12">
+            <label><h6 class="font-light">* Login Password : </h6><input class="form-control" placeholder="Login password :" type="text" name="loginpassword" ng-model="main.credentials.loginpassword" ng-required="!main.credentials.loginusername"></label>
+          </div>
+          <div class="small-12 medium-12 large-12 text-center">
+            <hr/>
+            <button class="button" ng-disabled="loginCredentialsForm.$error.required" ng-click="main.updateCredentials()">Save</button>
+          </div>
+        </div>
+      </form>
+      <form name="emailCredentialsForm">
+        <div class="row">
+          <div class="small-12 medium-12 large-12">
+            <hr/>
+            <label><h6 class="font-light">* Email Service User Name : </h6><input class="form-control" placeholder="Email service user name :" type="text" name="emailserviceusername" ng-model="main.credentials.emailserviceusername" ng-required="!main.credentials.emailservicepassword"></label>
+          </div>
+          <div class="small-12 medium-12 large-12">
+            <label><h6 class="font-light">* Email Service Password : </h6><input class="form-control" placeholder="Email service password :" type="text" name="emailservicepassword" ng-model="main.credentials.emailservicepassword" ng-required="!main.credentials.emailserviceusername"></label>
+          </div>
+          <hr/>
+          <div class="small-12 medium-12 large-12 text-center">
+            <hr/>
+            <button class="button" ng-disabled="emailCredentialsForm.$error.required" ng-click="main.updateCredentials()">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

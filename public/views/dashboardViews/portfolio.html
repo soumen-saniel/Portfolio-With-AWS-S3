@@ -1,0 +1,68 @@
+<div class="fullWidth row-padding dashboard-landing">
+	<div class="row align-center">
+      <div class="columns text-center">
+        <h1 class="display-inline">PORTFOLIO SECTION</h1>
+      </div>
+    </div>
+    <div class="row" ng-repeat="(projIndex, project) in main.projects">
+        <div class="column small-12 medium-12 large-12 project-title" ng-click="main.openPoject(projIndex)">
+            <h3>{{project.name}}</h3>
+        </div>
+        <div class="column small-12 medium-12 large-12 project-content" ng-if="main.openedProject === projIndex">
+            <div class="row row-padding">
+            	<div class="column small-12 medium-12 large-6 align-center">
+            		<fileupload-directive data="project" url="{{main.url.fs}}" path="{{main.fsDir}}{{project.name}}/"></fileupload-directive>
+                    <br/>
+            	</div>
+                
+            	<div class="column small-12 medium-12 large-6">
+            		<form name="form{{projIndex}}">
+                        <h5 class="font-light">* compulsory fields</h5>
+                        <h6 class="font-light">* Projec overview</h6>
+                        <textarea class="form-control" name="overview" data-autoresize placeholder="* Project overview :" rows="3" ng-model="project.overview" required></textarea>
+                        <h6 class="font-light">* Saperate the technologies with "," followed by a space</h6>
+            			<textarea class="form-control" name="technology" type="text" rows="2" ng-model="project.technology" placeholder="* Technology used : "  data-autoresize ng-list required></textarea>
+                        <h6 class="font-light">Projec ULR</h6>
+                        <input class="form-control" name="url" type="text" ng-model="project.url" placeholder="Project URL : "/>
+                        <h6 class="font-light">* Project category</h6>
+                        <input class="form-control" name="category" type="text" ng-model="project.category" placeholder="* Project category : " required/>
+                        <h6 class="font-light">Project client</h6>
+                        <input class="form-control" name="client" type="text" ng-model="project.client" placeholder="Project client : "/>
+                        <h6 class="font-light">* Your contribution as</h6>
+                        <input class="form-control" name="role" type="text" ng-model="project.role" placeholder="* Your contribution as : " required/>
+                        <label><h6 class="display-inline font-light">Project is complete :&nbsp;&nbsp;</h6><input name="complete" type="checkbox" ng-model="project.complete"/></label>
+                        <button class="button small" ng-disabled="form{{projIndex}}.$invalid" ng-click="main.save(project)">Save</button>
+                        <a class="button small" ng-click="main.remove(project)">Delete</a>
+            		</form>
+                    <br/>
+            	</div>
+
+                <div class="column small-12 medium-12 large-12">
+                    <div class="row">
+                        <div class="column small-12 medium-12 large-6" ng-repeat="(subIndex, sub) in main.projectsSub[project._id]">
+                            <form name="form{{subIndex}}{{projIndex}}">
+                                <fileupload-directive data="sub" url="{{main.url.fs}}" path="{{main.fsDir}}{{project.name}}/"></fileupload-directive>
+                                <textarea class="form-control" name="subDescription" data-autoresize placeholder="* Description :" rows="3" ng-model="sub.description" required></textarea>
+                                <button class="button small" ng-disabled="form{{subIndex}}{{projIndex}}.$invalid" ng-click="main.saveSub(sub)">Save</button>
+                                <a class="button small" ng-click="main.removeSub(sub)">Delete</a>
+                            </form>
+                            
+                        </div>
+                        <div class="column small-12 medium-12 large-6">
+                            <a class="button align-middle" ng-click="main.addNewSub(project)">Add new sub section</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column text-center">
+            <hr ng-if="main.projects.length > 0"/>
+            <form name="formAddProject">
+                <input  type="text" name="newProjectName" placeholder="Enter project name : " ng-model="main.newProjectName" required/>
+                <button class="button large align-middle" ng-disabled="formAddProject.$invalid" ng-click="main.addNewProject()">Add New Project</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="wrapper login-wrapper fullWidth">
+	<div class="row align-center">
+      <div class="columns text-center">
+        <h1 class="display-inline">ADMIN LOGIN</h1>
+      </div>
+    </div>
+    <br/>
+	<div class="row align-center align-middle ">
+		<div class="column small-12 medium-6 large-6">
+			<form name="loginForm">
+				<label class="font-light"><h4>User Name</h4></label>
+				<input class="form-control" placeholder="User Name" type="text" ng-model="main.userName" name="userName" required/>
+				<br/>
+				<label class="font-light"><h4>Password</h4></label>
+				<input class="form-control" placeholder="" type="password" ng-model="main.password" name="password" required/>
+				<div class="row">
+					<div class="column small-12 medium-12 large-12 text-center">
+						<button class="button" ng-disabled="loginForm.$invalid" ng-click="main.login()">Login</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
